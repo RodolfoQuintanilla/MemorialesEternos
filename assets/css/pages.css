@@ -1,0 +1,412 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+:root {
+  --white: #f9f9f9;
+  --black: #36383f;
+  --grey: #85888c;
+  --colorPrime: #847131;
+  --tipografia: #3d3d3d;
+  --titulos: rgb(39, 39, 39);
+  --darck: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Menu */
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.header {
+  background-color: var(--black);
+  box-shadow: 1px 1px 5px 0px var(--grey);
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.logo {
+  display: inline-block;
+  color: var(--white);
+  font-size: 60px;
+  margin-left: 10px;
+}
+
+.nav {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: var(--black);
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-out;
+}
+
+.menu a {
+  display: block;
+  padding: 30px;
+  color: var(--white);
+}
+
+.menu a:hover {
+  background-color: var(--colorPrime);
+}
+
+.hamb {
+  cursor: pointer;
+  float: right;
+  padding: 40px 20px;
+}
+
+.hamb-line {
+  background: var(--white);
+  display: block;
+  height: 2px;
+  position: relative;
+  width: 24px;
+}
+
+.hamb-line::before,
+.hamb-line::after {
+  background: var(--white);
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.hamb-line::before {
+  top: 5px;
+}
+
+.hamb-line::after {
+  top: -5px;
+}
+
+.side-menu {
+  display: none;
+}
+
+.side-menu:checked ~ nav {
+  max-height: 100%;
+}
+
+.side-menu:checked ~ .hamb .hamb-line {
+  background: transparent;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    max-height: none;
+    top: 0;
+    position: relative;
+    float: right;
+    width: fit-content;
+    background-color: transparent;
+  }
+
+  .menu li {
+    float: left;
+  }
+
+  .menu a:hover {
+    background-color: transparent;
+    color: var(--colorPrime);
+  }
+
+  .hamb {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .logo img {
+    width: 250px;
+  }
+}
+
+article{
+  padding: 20px 10%;
+}
+
+
+
+/* Footer */
+.footer {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 20px;
+  box-shadow: 1px 1px 5px 0px var(--grey);
+}
+
+.footer__contain {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.box {
+  width: 500px;
+}
+
+.footer__contacto h4 {
+  margin-bottom: 15px;
+}
+
+.bix {
+  background-color: var(--colorPrime);
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.bix:hover {
+  background-color: #8471315d;
+}
+
+/* Footer fin */
+/* whatsapp */
+
+.whatsapp {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  padding: 6px;
+  z-index: 100;
+}
+
+.whatsapp-icon {
+  margin-top: 13px;
+}
+
+/* Biografia */
+
+.foto{
+  text-align: center;
+}
+
+.foto__img{
+  width: 200px;
+  height: 270px;
+  border-radius: 50%;
+  margin: 0 auto;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+.h1, .fecha,.navs, .bio__h2{
+text-align: center;
+margin-top: 15px;;
+}
+
+.bio__h2{
+  margin-top: 2.5rem;
+}
+
+
+.p{
+  margin-top: 1rem;
+}
+
+.h1{
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.fecha {
+  text-align: center;
+  border-top: 2px solid #847131;
+  border-bottom: 2px solid #847131;
+  width: 300px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.navs{
+  display: flex;
+  justify-content: center;
+}
+.navs a{
+  text-decoration: none;
+  padding: 10px;
+}
+
+.navs__a {
+  background-color: #a19e97;
+  color: white;
+  border-right: 2px solid rgb(255, 255, 255);
+}
+
+.navs__a:hover {
+  background-color: #84713179;
+}
+
+.actives {
+  background-color: #847131;
+}
+
+/* fin Biografia */
+
+/* Fotos */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.gallery-item {
+  width: 300px;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  position: relative;
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s;
+  user-select: none;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.next {
+  right: 10px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+
+
+/* Videos */
+.bio__h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+.videos__card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.videos {
+  width: 300px;
+  height: 300px;
+}
+
+@media screen and (max-width: 818px) {
+  .videos {
+    width: 100%;
+  }
+}
+
+.video__mensaje {
+  width: 100%;
+  height: 450px;
+  margin-bottom: 2rem;
+}

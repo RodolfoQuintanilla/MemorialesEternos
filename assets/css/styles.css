@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+:root {
+  --white: #f9f9f9;
+  --black: #36383f;
+  --grey: #85888c;
+  --colorPrime: #847131;
+  --tipografia: #3d3d3d;
+  --titulos: rgb(39, 39, 39);
+  --darck: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Menu */
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.header {
+  background-color: var(--black);
+  box-shadow: 1px 1px 5px 0px var(--grey);
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.logo {
+  display: inline-block;
+  color: var(--white);
+  font-size: 60px;
+  margin-left: 10px;
+}
+
+.nav {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: var(--black);
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-out;
+}
+
+.menu a {
+  display: block;
+  padding: 30px;
+  color: var(--white);
+}
+
+.menu a:hover {
+  background-color: var(--colorPrime);
+}
+
+.hamb {
+  cursor: pointer;
+  float: right;
+  padding: 40px 20px;
+}
+
+.hamb-line {
+  background: var(--white);
+  display: block;
+  height: 2px;
+  position: relative;
+  width: 24px;
+}
+
+.hamb-line::before,
+.hamb-line::after {
+  background: var(--white);
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.hamb-line::before {
+  top: 5px;
+}
+
+.hamb-line::after {
+  top: -5px;
+}
+
+.side-menu {
+  display: none;
+}
+
+.side-menu:checked ~ nav {
+  max-height: 100%;
+}
+
+.side-menu:checked ~ .hamb .hamb-line {
+  background: transparent;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    max-height: none;
+    top: 0;
+    position: relative;
+    float: right;
+    width: fit-content;
+    background-color: transparent;
+  }
+
+  .menu li {
+    float: left;
+  }
+
+  .menu a:hover {
+    background-color: transparent;
+    color: var(--colorPrime);
+  }
+
+  .hamb {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .logo img {
+    width: 250px;
+  }
+}
+
+/* Fin del Menu */
+
+/* prtada */
+.portada {
+  background-image: url(../../img/pexels-a-darmel-7322360.jpg);
+  max-width: 100%;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: contain;
+  background-size: cover;
+  padding: 1.5rem;
+}
+
+.portada__texto {
+  width: 500px;
+  background-color: #36383fc5;
+  color: var(--white);
+  padding: 20px;
+  margin-top: 5%;
+  margin-left: 10%;
+  border-radius: 5px;
+}
+
+.portada__texto p {
+  margin-top: 20px;
+}
+
+/* fin prtada */
+
+/*Contenido*/
+.cont {
+  padding: 20px 10%;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  text-align: center;
+  box-shadow: 1px 1px 5px 0px var(--grey);
+  border-radius: 5px;
+  padding: 20px;
+  width: 350px;
+}
+
+.cont__text h2 {
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.7rem;
+}
+.cont__text h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+.cont__text p {
+  margin-bottom: 10px;
+}
+
+.cajas h3 {
+  margin: 2rem 0;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.card h4 {
+  color: var(--colorPrime);
+  font-size: 1.5rem;
+}
+
+.card img {
+  width: 150px;
+  margin: 20px 0;
+}
+
+.card--color {
+  background-color: #0c1c26;
+  color: var(--white);
+}
+
+.card button {
+  all: unset;
+  background-color: var(--colorPrime);
+  padding: 10px 25px;
+  margin-top: 1rem;
+  border-radius: 10px;
+  color: var(--white);
+}
+
+.card button:hover {
+  background-color: #84713177;
+}
+/*Contenido fin*/
+
+/* texto img */
+
+.humano,
+.pet {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+}
+
+.textBox {
+  width: 500px;
+  padding: 20px;
+}
+
+.textBox img {
+  width: 100%;
+  object-fit: cover;
+}
+.humano h4,
+.pet h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.humano button,
+.pet button {
+  all: unset;
+  width: 100%;
+  padding: 7px 5px;
+  margin-top: 10%;
+  border-radius: 8px;
+  background-color: var(--colorPrime);
+  text-align: center;
+  color: var(--white);
+}
+
+.humano button:hover,
+.pet button:hover {
+  background-color: #8471317e;
+}
+/* texto img */
+
+@media screen and (max-width: 818px) {
+  .pet {
+    flex-wrap: wrap;
+  }
+  .cards {
+    gap: 10px;
+  }
+  .portada {
+    padding: 5px;
+  }
+  .portada__texto {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.imgMuestra {
+  width: 100%;
+}
+
+.btns {
+  display: block;
+}
+.btns button {
+  all: unset;
+  width: 100%;
+  padding: 7px 5px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: var(--colorPrime);
+  text-align: center;
+  color: var(--white);
+}
+
+.btns button.hover {
+  background-color: #84713133;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 20px;
+  box-shadow: 1px 1px 5px 0px var(--grey);
+}
+
+.footer__contain {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.box {
+  width: 500px;
+}
+
+.footer__contacto h4 {
+  margin-bottom: 15px;
+}
+
+.bix {
+  background-color: var(--colorPrime);
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.bix:hover {
+  background-color: #8471315d;
+}
+
+/* Footer fin */
+/* whatsapp */
+
+.whatsapp {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  padding: 6px;
+  z-index: 100;
+}
+
+.whatsapp-icon {
+  margin-top: 13px;
+}
+
+/* fin whatsapp */
